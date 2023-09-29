@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title> startup </title>
+    <style>
+        .accordian-container {
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+
+        .accordian-header {
+            padding: 10px 0 10px 10px;
+            /* border: 1px solid #999; */
+            background-color: #e7f1ff;
+            font-weight: bold;
+        }
+
+        .accordian-body {
+            /* border: 1px solid #333; */
+            padding: 10px 0 10px 10px;
+            /* border-top: 0px; */
+            /* border-bottom: 0px; */
+            display: none;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="accordian-container">
+        <div class="according-group">
+            <div class="accordian-header">
+                Item 1
+            </div>
+            <div class="accordian-body">
+                Item 1 Body
+            </div>
+        </div>
+
+        <div class="according-group">
+            <div class="accordian-header">
+                Item 2
+            </div>
+            <div class="accordian-body">
+                Item 2 Body
+            </div>
+        </div>
+
+        <div class="according-group">
+            <div class="accordian-header">
+                Item 3
+            </div>
+            <div class="accordian-body">
+                Item 3 Body
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("load", (event) => {
+
+            function initialize() {
+                const firsAccordianBody = document.querySelector('.accordian-body');
+                const firsAccordianBodyClassList = firsAccordianBody.classList;
+                firsAccordianBodyClassList.add('block')
+            }
+
+            function handleToggle() {
+                const headerRef = document.querySelectorAll('.accordian-header');
+                const headerRefArray = Array.from(headerRef);
+                for (let i = 0; i < headerRefArray.length; i++) {
+                    const ref = headerRefArray[i];
+                    ref.addEventListener('click', (event) => {
+                        const clickedElemRef = event.target;
+                        const sibling = clickedElemRef.nextElementSibling;
+                        if (sibling.classList.contains('block')) {
+                            sibling.classList.add('none');
+                            sibling.classList.remove('block');
+                        } else if (sibling.classList.contains('none')) {
+                            sibling.classList.add('block');
+                            sibling.classList.remove('none');
+                        } else {
+                            sibling.classList.add('block');
+                        }
+                    })
+                }
+            }
+
+
+            initialize();
+            handleToggle();
+        });
+    </script>
+</body>
+
+</html>

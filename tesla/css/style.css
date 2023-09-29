@@ -1,0 +1,106 @@
+* {
+    font-family: 'DM Sans', 'Josefin Sans', 'Comfortaa', 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    padding: 0 20px 0 20px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 97%;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left .tesla {
+    width: 100px;
+}
+
+.left .github {
+    width: 15px;
+    margin-left: 10px;
+}
+
+.left b {
+    margin-left: 15px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+}
+
+.center ul {
+    list-style: none;
+    display: flex;
+}
+
+.center ul li {
+    margin-left: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.center ul li:nth-child(1) {
+    margin-left: 0px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.right ul {
+    list-style: none;
+    display: flex;
+}
+
+.right ul li {
+    margin-left: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    align-self: center;
+}
+
+.right .arrow {
+    display: inline;
+    padding: 0;
+}
+
+.right .arrow li {
+    width: 24px;
+    height: 2px;
+    background: #000;
+    margin-top: 5px;
+}
+
+.right .arrow li:nth-child(1) {
+    margin-top: 0;
+}
+
+.tesla-modals {
+    /* height: 500px; */
+}
+
+.tesla-modals img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
